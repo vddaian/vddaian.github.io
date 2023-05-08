@@ -1,0 +1,23 @@
+.newsMainBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.newsSliderMainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1280px;
+    overflow: hidden;
+}
+.newsSliderList, .newsSliderContextList{
+    display: flex;
+    list-style: none;
+    
+}
+.newsImgSlider{
+    width: 500px;
+    height: 350px;
+}
