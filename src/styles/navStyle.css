@@ -1,0 +1,83 @@
+.navSun{
+    position: absolute;
+    z-index: 1;
+    height: 230px;
+    width: 230px;
+    top: -90px;
+    left: -90px;
+    animation: sunAnimation 25s linear infinite;
+}
+.frsNavCloud, .secNavCloud{
+    position: absolute;
+    width: 300px;
+    height: 150px;
+}
+.frsNavCloud{
+    z-index: 1;
+    top:-30px;
+    left: -85px;
+    opacity: 90%;
+}
+.secNavCloud{
+    top: -50px;
+    left: -40px;
+}
+.thdNavCloud{
+    position: absolute;
+    top: 10px;
+    left: 45px;
+    width: 150px;
+    height: 75px;
+}
+.navMainBlock{
+    background-color: var(--sec-bkg-color);
+}
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    margin-left:15%;
+}
+.mainNavList{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    padding: 0px;
+    list-style: none;
+}
+.mainNavElement{
+    color: white;
+}
+.userBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 50%;
+}
+.userImg{
+    width: 50px;
+    height: 50px;
+}
+.userBlock:hover{
+    cursor: pointer;
+}
+@keyframes sunAnimation {
+    from{
+        rotate: 0deg;
+    } to{
+        rotate: 360deg;
+    }
+    40%, 80%{
+        scale: 1.15;
+    } 20%, 60%, 100%{
+        scale: 1;
+    }
+}
