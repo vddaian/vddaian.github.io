@@ -1,7 +1,0 @@
-Diseño - > MockUp
-2 Caruseles
-3 Animaciones Tochas
-3 Hovers Diferentes
-Nav Responsive
-Footer Responsive
-Plantilla Colores

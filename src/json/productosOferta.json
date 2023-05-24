@@ -1,0 +1,40 @@
+{
+    "products" : [
+        {
+            "productImg": "../media/images/citiesImg/viena.jpg",
+            "location": "VIENA",
+            "info":"Vuelo",
+            "price":"64€",
+            "flagImg": "../media/images/flagsImg/italyFlag.png",
+            "altPImg": "fotoViena",
+            "altFImg": "fotoBanderaRoma"
+        },
+        {
+            "productImg": "../media/images/citiesImg/barcelona.jpg",
+            "location": "BARCELONA",
+            "info":"Vuelo + Hotel",
+            "price":"405€",
+            "flagImg": "../media/images/flagsImg/spainFlag.png",
+            "altPImg": "fotoBarcelona",
+            "altFImg": "fotoBanderaEspaña"
+        },
+        {
+            "productImg": "../media/images/citiesImg/amsterdam.jpg",
+            "location": "AMSETERDAM",
+            "info":"Hotel",
+            "price":"46€ / Noche",
+            "flagImg": "../media/images/flagsImg/paisesBajosFlag.png",
+            "altPImg": "fotoAmsertdam",
+            "altFImg": "fotoBanderaPaisesBajos"
+        },
+        {
+            "productImg": "../media/images/citiesImg/luxemburgo.jpg",
+            "location": "LUXEMBURGO",
+            "info":"Hotel",
+            "price":"71€ / Noche",
+            "flagImg": "../media/images/flagsImg/luxemburgoFlag.png",
+            "altPImg": "fotoLuxemburgo",
+            "altFImg": "fotoBanderaLuxemburgo"
+        }
+    ]
+}

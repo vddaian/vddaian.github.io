@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../styles/navStyle.css" />
+  <link rel="stylesheet" href="../styles/travelStyle.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <title>Viajes</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.getJSON("../json/productosOferta.json", function (data) {
+        data.products.forEach(function (product) {
+          //DECLARATION OF VARIABLES
+          var mainContainer;
+          var productImg;
+          var location;
+          var info;
+          var price;
+          var flagImg;
+          var productDiv;
+          var informationDiv;
+          //DEFINITION OF TAGS, TYPE AND IF THEY HAVE ATTRIBUTES OR NOT FOR EACH VARIABLE.
+          mainContainer = $("#productsBlock");
+          productImg = $("<img>").attr("src", product.productImg).attr("alt", product.altPImg);
+          flagImg = $("<img>").attr("src", product.flagImg).attr("alt", product.altFImg);
+          location = $("<p>").text(product.location);
+          info = $("<p>").text(product.info);
+          price = $("<p>").text(product.price);
+          //DEFINITION OF CLASSES FOR TAGS WE WILL USE ON THE BODY.
+          productDiv = $("<div>").addClass("productBlock");
+          informationDiv = $("<div>").addClass("infoProduct");
+          productImg.addClass("productImg");
+          flagImg.addClass("flagImg");
+          //WE INDICATE WHAT ELEMENTS WILL THE DIFFERENTS CONTAINER HAVE INTO.
+          mainContainer.append(productDiv);
+          productDiv.append(productImg, informationDiv);
+          informationDiv.append(location, info, price, flagImg);
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header class="navMainBlock">
+    <!--START-NAVBAR-SUN-ELEMENTS-->
+    <img src="../media/images/otherComponents/Sun.png" alt="sunImg" class="navSun" />
+    <img src="../media/images/otherComponents/nubeA.png" alt="cloudImg" class="frsNavCloud" />
+    <img src="../media/images/otherComponents/nubeB.png" alt="cloudImg" class="secNavCloud" />
+    <img src="../media/images/otherComponents/nubeC.png" alt="cloudImg" class="thdNavCloud" />
+    <!--END-NAVBAR-SUN-ELEMENTS-->
+    <!--START-NAV-BLOCK-->
+    <nav class="navbar">
+      <!--HAMBURGUER-ELEMENTS-->
+      <input type="checkbox" class="navCheckHm">
+      <div class="hmMenu">
+        <hr />
+        <hr />
+        <hr />
+      </div>
+      <!--MAIN-NAV-LINKS-LIST-->
+      <ul class="mainNavList">
+        <li class="mainNavElement"><a href="../index.html">INICIO</a></li>
+        <li class="mainNavElement"><a href="./viajes.html">VIAJES</a></li>
+        <li class="mainNavElement"><a href="./quienSomos.html">QUIENES SOMOS</a></li>
+        <li class="mainNavElement"><a href="./routes/prox.html">PROMOCION</a></li>
+      </ul>
+      <!--USER-BLOCK-->
+      <div class="userBlock">
+        <a href="./logReg.html"><img src="../media/images/user.png" alt="userIco" class="userImg" /></a>
+      </div>
+    </nav>
+    <!--END-NAV-BLOCK-->
+  </header>
+  <!--START-JSON-OFFERS-BLOCK-->
+  <section class="ofertasMainBlock">
+    <h2 class="ofertasTitle">OFERTAS</h2>
+    <div class="ofertasSubBlock">
+      <div class="ofertasAuxBlock" id="productsBlock">
+      </div>
+    </div>
+  </section>
+  <!--END-JSON-OFFERS-BLOCK-->
+  <!--START-LANDSCAPE-SLIDER-BLOCK-->
+  <section class="sliderMainContainer">
+    <div class="sliderSubContainer">
+      <ul class="sliderImg">
+        <li class="sliderElement" id="sI01">
+          <img src="../media/images/sliderImg/sliderImgChina.jpg" alt="">
+        </li>
+        <li class="sliderElement" id="sI02">
+          <img src="../media/images/sliderImg/sliderImgSeoul.jpg" alt="">
+        </li>
+        <li class="sliderElement" id="sI03">
+          <img src="../media/images/sliderImg/sliderImgToronto.jpg" alt="">
+        </li>
+        <li class="sliderElement" id="sI04">
+          <img src="../media/images/sliderImg/sliderImgNorway.jpg" alt="">
+        </li>
+      </ul>
+      <ul class="sliderMenu">
+        <li class="menuElement">
+          <a href="#sI01">1</a>
+        </li>
+        <li class="menuElement">
+          <a href="#sI02">2</a>
+        </li>
+        <li class="menuElement">
+          <a href="#sI03">3</a>
+        </li>
+        <li class="menuElement">
+          <a href="#sI04">4</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!--END-LANDSCAPE-SLIDER-BLOCK-->
+  <!--START-PRODUCTS-EUROPA-BLOCK-->
+  <section class="productsMainBlock">
+    <h2 class="productsTitle">EUROPA</h2>
+    <div class="productsSubBlock">
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/berlin.jpg);"></span>
+        <div class="infoProduct">
+          <p>BERLIN</p>
+          <p>Vuelo</p>
+          <p>274€</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/germanyFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/madrid.jpg);"></span>
+        <div class="infoProduct">
+          <p>MADRID</p>
+          <p>Vuelo + Hotel</p>
+          <p>183€</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/spainFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/compenague.jpg);"></span>
+        <div class="infoProduct">
+          <p>COPENAGUE</p>
+          <p>Hotel</p>
+          <p>48€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/dinamarcaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/londres.jpg);"></span>
+        <div class="infoProduct">
+          <p>LONDRES</p>
+          <p>Hotel</p>
+          <p>60€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/reinoUnidoFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/bucarest.jpg);"></span>
+        <div class="infoProduct">
+          <p>BUCAREST</p>
+          <p>Hotel</p>
+          <p>53€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/rumaniaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/roma.jpg);"></span>
+        <div class="infoProduct">
+          <p>ROMA</p>
+          <p>Hotel</p>
+          <p>134€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/italyFlag.png);"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--END-PRODUCTS-EUROPA-BLOCK-->
+  <!--START-PRODUCTS-ASIA-BLOCK-->
+  <section class="productsMainBlock">
+    <h2 class="productsTitle">ASIA</h2>
+    <div class="productsSubBlock">
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/hongKong.jpg);"></span>
+        <div class="infoProduct">
+          <p>HONG KONG</p>
+          <p>Vuelo</p>
+          <p>838€</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/chinaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/tokio.jpg);"></span>
+        <div class="infoProduct">
+          <p>TOKIO</p>
+          <p>Vuelo + Hotel</p>
+          <p>1400€</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/japanFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/seoul.jpg);"></span>
+        <div class="infoProduct">
+          <p>SEOUL</p>
+          <p>Hotel</p>
+          <p>240€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/sCoreaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/shanghai.jpg);"></span>
+        <div class="infoProduct">
+          <p>SHANGHÁI</p>
+          <p>Hotel</p>
+          <p>157€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/chinaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/pekin.jpg);"></span>
+        <div class="infoProduct">
+          <p>PEKÍN</p>
+          <p>Hotel</p>
+          <p>128€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/chinaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/hanoi.jpg);"></span>
+        <div class="infoProduct">
+          <p>HANÓI</p>
+          <p>Hotel</p>
+          <p>64€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/vietnamFlag.png);"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--END-PRODUCTS-ASIA-BLOCK-->
+  <!--START-PRODUCTS-AMERICA-BLOCK-->
+  <section class="productsMainBlock">
+    <h2 class="productsTitle">AMERICA</h2>
+    <div class="productsSubBlock">
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/sanFrancisco.jpg);"></span>
+        <div class="infoProduct">
+          <p>SAN FRANCISCO</p>
+          <p>Vuelo</p>
+          <p>312€</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/eeuuFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/tijuana.jpg);"></span>
+        <div class="infoProduct">
+          <p>TIJUANA</p>
+          <p>Vuelo + Hotel</p>
+          <p>580€</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/mexicoFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/buenosAires.jpg);"></span>
+        <div class="infoProduct">
+          <p>BUENOS AIRES</p>
+          <p>Hotel</p>
+          <p>73€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/argentinaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/honolulu.jpg);"></span>
+        <div class="infoProduct">
+          <p>HONOLULU</p>
+          <p>Hotel</p>
+          <p>80€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/eeuuFlag.png);"></span>
+        </div>
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/ottawa.jpg);"></span>
+        <div class="infoProduct">
+          <p>OTTAWA</p>
+          <p>Hotel</p>
+          <p>70€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/canadaFlag.png);"></span>
+        </div>
+
+      </div>
+      <div class="productBlock">
+        <span class="productImg" style="background-image: url(../media/images/citiesImg/toronto.jpg);"></span>
+        <div class="infoProduct">
+          <p>TORONTO</p>
+          <p>Hotel</p>
+          <p>84€ / Noche</p>
+          <span class="flagImg" style="background-image: url(../media/images/flagsImg/canadaFlag.png);"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--END-PRODUCTS-AMERICA-BLOCK-->
+  <!--START-FOOTER-->
+  <footer class="footerMainBlock">
+    <ul class="footerList">
+      <li>VISITA NUESTRAS OFICINAS O CONTACTANOS</li>
+      <li>IES JOSE MOR DE FUENTES</li>
+      <li>AV. PUEYO, 89, 22400 MONZON, HUESCA</li>
+      <li>VDDAIAN@IESMORDEFUENTES.COM</li>
+    </ul>
+    <ul class="footerList">
+      <li>REDES SOCIALES</li>
+      <li>FACEBOOK</li>
+      <li>INSTAGRAM</li>
+      <li>TWITTER</li>
+      <li>DISCORD</li>
+    </ul>
+    <ul class="footerList">
+      <li>PREGUNTAS FRECUENTES</li>
+      <li>¿COMO SE PUEDE REGISTRAR?</li>
+      <li>¿SE REALIZAN DEVOLUCIONES EN CASO DE CANCELACION?</li>
+      <li>¿COMO PUEDO ENLAZAR MI CUENTA DE CREDITO A MI CUENTA?</li>
+      <li>OTROS DATOS</li>
+      <li>LEY DE PREVENCION DE DATOS</li>
+      <li>SISTEMA DE DEVOLUCIONES</li>
+    </ul>
+  </footer>
+  <!--END-FOOTER-->
+</body>
+
+</html>

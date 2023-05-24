@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../styles/logInStyle.css" />
+</head>
+
+<body>
+  <!--START-LOGIN-FORM-BLOCK-->
+  <section class="formMainBlock">
+    <!--LOG-REGISTER-LINK-BUTTONS-->
+    <a href="logReg.html" class="logLink">
+      <p>Acceder</p>
+    </a>
+    <a href="reg.html" class="regLink">
+      <p>Registrate</p>
+    </a>
+    <!--START-LOGIN-FORM-BLOCK-->
+    <form class="formRegBlock">
+      <!--FIRST-NAME-INPUT-->
+      <label for="inNombre" class="formLabel">Nombre</label>
+      <input type="text" name="inNombre" class="formInput" required>
+
+      <!--SURNAME-INPUT-->
+      <label for="inApellidos" class="formLabel">Apellidos</label>
+      <input type="text" class="formInput" required />
+
+      <!--BIRTH-DATE-INPUT-->
+      <label for="inFechaNacimiento" class="formLabel">Fecha Nacimiento</label>
+      <input type="date" class="formInput" required />
+
+      <!--EMAIL-INPUT-->
+      <label for="inEmail" class="formLabel">Email</label>
+      <input type="text" class="formInput" placeholder="example@example.local" required />
+
+      <!--USER-NAME-INPUT-->
+      <label for="inNombreUsuario" class="formLabel">Usuario</label>
+      <input type="text" class="formInput" required />
+
+      <!--PASSWORD-INPUT-->
+      <label for="inContrasena" class="formLabel">Contraseña</label>
+      <input type="password" class="formInput" required />
+
+      <!--REPASSWORD-INPUT-->
+      <label for="inReContrasena" class="formLabel">Vuelva insertar la contraseña</label>
+      <input type="password" class="formInput" required />
+      <button class="registerButton" type="submit">Registrarse</button>
+    </form>
+    <button class="homeButton"><a href="../index.html">INICIO</a></button>
+  </section>
+  <!--END-LOGIN-FORM-BLOCK-->
+</body>
+
+</html>

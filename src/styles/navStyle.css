@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*--START-ANIMATION-ELEMENTS-STYLES--*/
 .navSun{
     position: absolute;
     z-index: 1;
@@ -7,6 +9,7 @@
     left: -90px;
     animation: sunAnimation 25s linear infinite;
 }
+
 .frsNavCloud, .secNavCloud{
     position: absolute;
     width: 300px;
@@ -29,6 +32,8 @@
     width: 150px;
     height: 75px;
 }
+/*--END-ANIMATION-ELEMENTS-STYLES--*/
+/*--START-MAIN-NAV-STYLES--*/
 .navMainBlock{
     background-color: var(--sec-bkg-color);
 }
@@ -36,9 +41,29 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: auto;
     height: 60px;
-    margin-left:15%;
+    margin-left:220px
+}
+.hmMenu {
+    display: none;
+    width: 25px;
+    margin-top: 6px;
+    margin-left: 5%;
+}
+
+.hmMenu hr {
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.navCheckHm {
+    display: none;
+    position: absolute;
+    right: 56%;
+    width: 40%;
+    height: 40px;
+    opacity: 0;
 }
 .mainNavList{
     display: flex;
@@ -49,18 +74,21 @@
     padding: 0px;
     list-style: none;
 }
-.mainNavElement{
+.mainNavElement a{
     color: white;
+    text-decoration: none;
 }
+/*--END-MAIN-NAV-STYLES--*/
+/*--START-USER-NAV-STYLES--*/
 .userBlock{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 50px;
     height: 50px;
-    margin-left: 10%;
+    margin-left: 5%;
     background-color: white;
     border-radius: 50%;
+}
+.userBlock a {
+    display: flex;
 }
 .userImg{
     width: 50px;
@@ -69,6 +97,8 @@
 .userBlock:hover{
     cursor: pointer;
 }
+/*--END-USER-NAV-STYLES--*/
+/*--MEDIA-QUERY--*/
 @keyframes sunAnimation {
     from{
         rotate: 0deg;
@@ -79,5 +109,37 @@
         scale: 1.15;
     } 20%, 60%, 100%{
         scale: 1;
+    }
+}
+@media (max-width: 860px) {
+    .navSun, .frsNavCloud, .secNavCloud, .thdNavCloud {
+        display: none;
+    }
+    .navbar{
+        margin-left: 0;
+    }
+}
+@media (max-width: 680px) {
+    .mainNavList{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        height: 360px;
+        width: 200px;
+        margin-top: 59px;
+        background-color: var(--sec-bkg-color);
+        z-index: 1;
+    }
+    .hmMenu,
+    .navCheckHm {
+        display: block;
+    }
+    .navCheckHm:checked~.mainNavList {
+        display: flex;
+    }
+    .userBlock{
+        margin-left: 65%;
     }
 }
